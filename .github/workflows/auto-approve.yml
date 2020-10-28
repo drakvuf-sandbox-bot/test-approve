@@ -7,10 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: ${{ github.base_ref }}
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.head_ref }}
+        ref: ${{ github.event.pull_request.head.sha }}
     - run: |
         git diff ${{ github.base_ref }}
     - uses: hmarr/auto-approve-action@v2.0.0
