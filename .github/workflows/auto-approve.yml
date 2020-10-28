@@ -9,7 +9,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.head_ref }} 
+        path: repo
     - run: |
+        cd repo
         git fetch main
         git diff main
     - uses: hmarr/auto-approve-action@v2.0.0
