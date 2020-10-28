@@ -12,7 +12,7 @@ jobs:
         path: repo
     - run: |
         cd repo
-        git fetch main
+        git fetch origin main
         git diff main
     - uses: hmarr/auto-approve-action@v2.0.0
       with:
